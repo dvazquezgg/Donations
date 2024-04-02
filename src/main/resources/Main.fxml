@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="mx.edu.greengates.cs.donations.controller.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <TabPane id="tabPaneMain" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Donations">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label id="lblDonations" text="Donations" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="16.0" />
+                        <ListView fx:id="lvDonations" prefHeight="200.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="48.0" />
+                        <Button fx:id="btnCreateReceipts" mnemonicParsing="false" text="Create Receipts" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="264.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab id="tabNewDonor" text="New Donor">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="200.0">
+                     <children>
+                        <Label id="lblFirstName" text="First Name" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0" />
+                        <TextField fx:id="txtFirstName" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="32.0" />
+                        <Label text="Last Name" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="64.0" />
+                        <TextField fx:id="txtLastName" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="64.0" />
+                        <Label id="lblEmail" text="Email" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="96.0" />
+                        <TextField fx:id="txtEmail" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="96.0" />
+                        <Label id="lblAddress" text="Address" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="128.0" />
+                        <TextField fx:id="txtAddress" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="128.0" />
+                        <Label id="lblTaxNumber" text="Tax Number" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="160.0" />
+                        <TextField fx:id="txtTaxNumber" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="160.0" />
+                        <Button fx:id="btnAddDonor" onAction="#addDonorButton" mnemonicParsing="false" text="Add Donor" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="196.0" />
+                        <Button fx:id="btnClearDonor" mnemonicParsing="false" text="Clear" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="196.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="New Charity">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label id="lblCharityName" text="Name" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0" />
+                        <TextField id="txtCharityName" AnchorPane.leftAnchor="132.0" AnchorPane.topAnchor="32.0" />
+                        <Button id="btnAddCharity" mnemonicParsing="false" text="Add Charity" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="96.0" />
+                        <Button id="btnClearCharity" mnemonicParsing="false" text="Clear" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="96.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="New Donation">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Donor" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0" />
+                        <ChoiceBox id="selectDonor" prefWidth="150.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="32.0" />
+                        <Label text="Charity" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="64.0" />
+                        <ChoiceBox id="selectCharity" prefWidth="150.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="64.0" />
+                        <Label text="Amount" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="96.0" />
+                        <TextField id="txtAmount" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="96.0" />
+                        <Label text="Date" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="128.0" />
+                        <DatePicker AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="128.0" />
+                        <Button id="btnAddDonation" mnemonicParsing="false" text="AddDonation" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="208.0" />
+                        <Button id="btnClearDonation" mnemonicParsing="false" text="Clear" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="208.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+  </children>
+</VBox>
