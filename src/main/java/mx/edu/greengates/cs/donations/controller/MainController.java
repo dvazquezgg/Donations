@@ -1,15 +1,19 @@
 package mx.edu.greengates.cs.donations.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ChoiceBox;
 import javafx.util.Callback;
 import mx.edu.greengates.cs.donations.Main;
 import mx.edu.greengates.cs.donations.mapper.DonorMapper;
 import mx.edu.greengates.cs.donations.model.Donation;
 import mx.edu.greengates.cs.donations.model.Donor;
+import mx.edu.greengates.cs.donations.model.Charity;
 import mx.edu.greengates.cs.utils.Validation;
 
 import java.util.ArrayList;
@@ -44,6 +48,14 @@ public class MainController {
     private Button btnClearDonor;
 
     @FXML
+    private ChoiceBox<Donor> selectDonor;
+    @FXML
+    private ChoiceBox<Charity> selectCharity;
+
+    private ObservableList<Donor> donorList = FXCollections.observableArrayList();
+    private ObservableList<Charity> charityList = FXCollections.observableArrayList();
+
+    @FXML
     private void addDonorButton() {
         System.out.println("Add Donor");
         if (Validation.empty(txtFirstName)) return;
@@ -55,6 +67,7 @@ public class MainController {
         System.out.println(DonorMapper.mapToString(donor));
         Main.addDonor(donor);
         Main.printDonors();
+        donorList.add(donor);
     }
 
     @FXML
@@ -99,6 +112,13 @@ public class MainController {
                 };
             }
         });
+
+        // Assuming you have access to the donations, donors, and charities ArrayLists
+        donorList.addAll(Main.getDonors());
+        selectDonor.setItems(donorList);
+
+        charityList.addAll(Main.getCharities());
+        selectCharity.setItems(charityList);
     }
 
 }

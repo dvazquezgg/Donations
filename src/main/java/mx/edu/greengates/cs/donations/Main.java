@@ -40,7 +40,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        readFile();
+        readFile(); // Filling data from file
         launch();
     }
 
@@ -85,6 +85,14 @@ public class Main extends Application {
 
     public static ArrayList<Donation> getDonations(){
         return donations;
+    }
+
+    public static ArrayList<Donor> getDonors(){
+        return donors;
+    }
+
+    public static ArrayList<Charity> getCharities(){
+        return charities;
     }
 
     private static void readFile() {

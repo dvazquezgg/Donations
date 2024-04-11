@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Donation {
 
-    private int id;
+    private int id; // default value is 0
     private Donor donor;
     private Charity charity;
     private double amount;
@@ -27,6 +27,9 @@ public class Donation {
         this.date = date;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getId() {
         return id;
     }

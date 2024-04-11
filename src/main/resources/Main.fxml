@@ -103,7 +103,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-          <Tab id="tabNewDonor" text="New Donor">
+            <Tab id="tabNewDonor" text="New Donor">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="200.0">
                      <children>
@@ -140,9 +140,9 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label text="Donor" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0" />
-                        <ChoiceBox id="selectDonor" prefWidth="150.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="32.0" />
+                        <ChoiceBox fx:id="selectDonor" prefWidth="150.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="32.0" />
                         <Label text="Charity" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="64.0" />
-                        <ChoiceBox id="selectCharity" prefWidth="150.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="64.0" />
+                        <ChoiceBox fx:id="selectCharity" prefWidth="150.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="64.0" />
                         <Label text="Amount" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="96.0" />
                         <TextField id="txtAmount" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="96.0" />
                         <Label text="Date" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="128.0" />
